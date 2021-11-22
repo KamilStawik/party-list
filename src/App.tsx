@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import List from "./components/List"
+import TypeScriptSyntax from './TypeScriptSyntax';
 
 interface IState {
   invitedPeople: {
@@ -12,9 +13,13 @@ interface IState {
 
 function App() {
 
-  const [invitedPeople, setInvitedPeople] = useState<IState["invitedPeople"]>(
-    []
-  );
+  const [invitedPeople, setInvitedPeople] = useState<IState["invitedPeople"]>([
+    {
+      name: "Tomasz",
+      url: "",
+      age: 31,
+    }
+  ]);
 
   // const changeNumber = () => {
   //   setNumber(50);
@@ -25,8 +30,7 @@ function App() {
     <div className="App">
       <h1>People invited to my party</h1>
       <List invitedPeople={invitedPeople} />
-      {invitedPeople.map(person => person.age)}
-
+      <TypeScriptSyntax />
     </div>
   );
 }

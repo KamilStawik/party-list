@@ -9,7 +9,7 @@ const TypeScriptSyntax = () => {
 
 
     return (
-        "syntax"
+        <p>syntax</p>
     );
 };
 
