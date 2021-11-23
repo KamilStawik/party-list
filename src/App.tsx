@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import List from "./components/List"
 import TypeScriptSyntax from './TypeScriptSyntax';
+import './App.css';
 
 interface IState {
   invitedPeople: {
     name: string,
     url: string,
     age: number,
-    note?: "string",
+    note?: string,
   }[],
 };
 
@@ -15,16 +16,12 @@ function App() {
 
   const [invitedPeople, setInvitedPeople] = useState<IState["invitedPeople"]>([
     {
-      name: "Tomasz",
-      url: "",
-      age: 31,
-    }
+      name: "Mark Zuckerberg",
+      url: "https://pyxis.nymag.com/v1/imgs/fcd/8a3/1b6a5a50521557429a406518ae8e1d25c0-31-mark-zuckerberg.rsquare.w330.jpg",
+      age: 37,
+      note: "ten od Facebooka",
+    },
   ]);
-
-  // const changeNumber = () => {
-  //   setNumber(50);
-  // };
-
 
   return (
     <div className="App">
