@@ -35,3 +35,15 @@
   width: 30%;
   text-align: left;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin: auto
+}
+
+.form__input {
+  padding: 6px;
+  margin: 6px;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface IProps {
     invitedPeople: {
@@ -31,4 +31,5 @@ const List: React.FC<IProps> = ({ invitedPeople }) => {
         </ul >
     );
 };
+
 export default List;

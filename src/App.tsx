@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import List from "./components/List"
+import List from './components/List';
+import Form from './components/Form';
 import TypeScriptSyntax from './TypeScriptSyntax';
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
     <div className="App">
       <h1>People invited to my party</h1>
       <List invitedPeople={invitedPeople} />
+      <Form />
       <TypeScriptSyntax />
     </div>
   );
