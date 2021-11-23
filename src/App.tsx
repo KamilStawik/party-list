@@ -4,7 +4,7 @@ import Form from './components/Form';
 import TypeScriptSyntax from './TypeScriptSyntax';
 import './App.css';
 
-interface IState {
+export interface IState {
   invitedPeople: {
     name: string,
     url: string,
@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <h1>People invited to my party</h1>
       <List invitedPeople={invitedPeople} />
-      <Form />
+      <Form invitedPeople={invitedPeople} setInvitedPeople={setInvitedPeople} />
       <TypeScriptSyntax />
     </div>
   );

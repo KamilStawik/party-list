@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
+import { IState as Props } from './../App'
 
-const Form = (): JSX.Element => {
+interface IProps {
+    invitedPeople: Props["invitedPeople"],
+    setInvitedPeople: React.Dispatch<React.SetStateAction<Props["invitedPeople"]>>
+};
+
+const Form: React.FC<IProps> = ({ invitedPeople, setInvitedPeople }): JSX.Element => {
 
     const [input, setInput] = useState(
         {
@@ -11,11 +17,39 @@ const Form = (): JSX.Element => {
         }
     );
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
         setInput({
             ...input,
             [event.target.name]: event.target.value
-        })
+        });
+    };
+
+    const handleClick = (event: React.MouseEvent<HTMLElement>): void => {
+        event.preventDefault();
+        if (
+            !input.name ||
+            !input.age ||
+            !input.url
+        ) {
+            return;
+        } else {
+            console.log(input);
+            setInvitedPeople([
+                ...invitedPeople,
+                {
+                    name: input.name,
+                    age: +input.age,
+                    url: input.url,
+                    note: input.note,
+                }
+            ]);
+            setInput({
+                name: "",
+                age: "",
+                url: "",
+                note: "",
+            });
+        };
     };
 
     return (
@@ -51,6 +85,9 @@ const Form = (): JSX.Element => {
                 value={input.note}
                 onChange={handleChange}
             />
+            <button
+                className="form__button"
+                onClick={handleClick}>Add to list</button>
         </form>
     );
 };

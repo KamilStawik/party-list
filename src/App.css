@@ -47,3 +47,12 @@
   padding: 6px;
   margin: 6px;
 }
+
+.form__button {
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: teal;
+  font-weight: 700;
+  color: white;
+  border: none
+}

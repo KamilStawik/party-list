@@ -1,13 +1,5 @@
 import React from 'react';
-
-interface IProps {
-    invitedPeople: {
-        name: string,
-        url: string,
-        age: number,
-        note?: string,
-    }[],
-};
+import { IState as IProps } from './../App'
 
 const List: React.FC<IProps> = ({ invitedPeople }) => {
 
@@ -15,7 +7,7 @@ const List: React.FC<IProps> = ({ invitedPeople }) => {
 
         return invitedPeople.map(invitedPerson => {
             return (
-                <li className="list">
+                <li className="list" key={invitedPerson.name}>
                     <img className="list__image" src={invitedPerson.url} alt="zdjęcie zaproszonej osoby" />
                     <h2 className="list__header">{invitedPerson.name}</h2>
                     <p className="list__age">{invitedPerson.age} lat</p>
